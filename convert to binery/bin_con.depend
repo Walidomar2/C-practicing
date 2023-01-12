@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1663773946 source:d:\courses\walid\binery convert\bin_con\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1663968953 source:d:\courses\walid\binery convert\convert to binery\main.c
+	<stdio.h>
+	<stdlib.h>
+
