@@ -1,0 +1,34 @@
+int* acmTeam(int topic_count, char** topic, int* result_count) {
+    *result_count = 2;
+    int *resultArr=(int *)calloc(*result_count,sizeof(int));
+    
+    int rowLen=strlen(topic[0]);
+    int tempSum=0;
+    int maxNumTopics=0;
+    int numOfTeams=0;
+    
+    for(int i=0;i<topic_count-1;i++)
+    {
+        for(int j=i+1;j<topic_count;j++)
+        {
+            tempSum=0;
+            for(int k=0;k<rowLen;k++)
+            {
+                if(topic[i][k]-'0' + topic[j][k]-'0' != 0)
+                tempSum++;
+            }
+            
+            if(tempSum > maxNumTopics)
+            {
+                maxNumTopics= tempSum;
+                resultArr[0]=maxNumTopics;
+                resultArr[1]=0;
+            }
+            
+            if(tempSum == maxNumTopics)
+                 resultArr[1]++;
+        }   
+    }
+
+    return resultArr;
+}
