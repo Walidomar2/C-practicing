@@ -1,0 +1,27 @@
+void kaprekarNumbers(int p, int q) {
+    int leftPart = 0, rightPart = 0,flag=0;
+    int tempSum = 0, temp = 0,divisor;
+    long long numSquare = 0;
+
+    for (int i = p; i <= q; i++) {
+        numSquare = (long long)i * i;
+        temp = i;
+        divisor = 1;
+        while (temp > 0) {
+            temp /= 10;
+            divisor*=10;
+        }
+
+        leftPart = numSquare / divisor;
+        rightPart = numSquare % divisor;
+        tempSum = leftPart + rightPart;
+
+        if (tempSum == i) {
+            printf("%d ", i);
+            flag=1;
+        }
+    }
+    
+    if(flag==0)
+        printf("INVALID RANGE");
+}
